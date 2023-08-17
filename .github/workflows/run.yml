@@ -7,10 +7,10 @@ jobs:
   run-python:
     runs-on: ubuntu-latest
     steps:
-      -name: execute py Script
-      env:
-        SOME_SECRET: ${{secrets.SOME_SECRET}}
-      run: python main.py
+      - name: execute py Script
+        env:
+          SOME_SECRET: ${{secrets.SOME_SECRET}}
+        run: python main.py
       - name: Checkout Code
         uses: actions/checkout@v3
 

@@ -49,15 +49,15 @@ class Detector:
                     # displayText="{}:{:.4f}".format(classLabel,classConfidence)#2
                     displayText="{}:{:.2f}".format(classLabel,classConfidence)#2
                     x,y,w,h=bbox
-                    x1=(x+w)/2
-                    y1=(y+h)/2
-                    b=(0,0)[0]<x1<(800,500)[0] and (0,0)[1]<y1<(800,500)[1]
-                    if b:
-                        token = "6275415240:AAF3yDdT45-VIn8GdBrQUHH0XmtMXo0MC28"
-                        receiver_id=5877612764
-                        bot = telepot.Bot(token)
-                        a=cv2.imwrite("a.jpg",image)
-                        bot.sendPhoto(receiver_id,photo=open("a.jpg", "rb"),caption="Có xâm nhập, nguy hiêm!")
+                    # x1=(x+w)/2
+                    # y1=(y+h)/2
+                    # b=(0,0)[0]<x1<(800,500)[0] and (0,0)[1]<y1<(800,500)[1]
+                    # if b:
+                    #     token = "6275415240:AAF3yDdT45-VIn8GdBrQUHH0XmtMXo0MC28"
+                    #     receiver_id=5877612764
+                    #     bot = telepot.Bot(token)
+                    #     a=cv2.imwrite("a.jpg",image)
+                    #     bot.sendPhoto(receiver_id,photo=open("a.jpg", "rb"),caption="Có xâm nhập, nguy hiêm!")
                     cv2.rectangle(image,(x,y),(x+w,y+h),color=classColor,thickness=1)
                     cv2.rectangle(image,(0,0),(800,500),(0,255,0),2)
                     cv2.putText(image,displayText,(x,y-10),cv2.FONT_HERSHEY_PLAIN,1,classColor,2)#2

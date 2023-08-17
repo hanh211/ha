@@ -3,10 +3,7 @@ name: Run Python Script
 on:
 
   workflow_dispatch:
-    - name: execute py Script
-      env:
-        SOME_SECRET: ${{secrets.SOME_SECRET}}
-      run: python main.py
+
 
 jobs:
   run-python:
@@ -19,6 +16,10 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+      - name: execute py Script
+        env:
+          SOME_SECRET: ${{secrets.SOME_SECRET}}
+        run: python main.py
 
       - name: Run Python Script
         run: |

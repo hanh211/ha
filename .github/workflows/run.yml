@@ -1,11 +1,12 @@
 name: Run Python Script
 
 on:
-  - name: execute py Script
-    env:
-      SOME_SECRET: ${{secrets.SOME_SECRET}}
-    run: python main.py
+
   workflow_dispatch:
+    - name: execute py Script
+      env:
+        SOME_SECRET: ${{secrets.SOME_SECRET}}
+      run: python main.py
 
 jobs:
   run-python:

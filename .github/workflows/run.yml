@@ -1,0 +1,27 @@
+name: Run Python Script
+
+on:
+
+  workflow_dispatch:
+
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: execute py Script
+        env:
+          SOME_SECRET: ${{secrets.SOME_SECRET}}
+        run: python main.py
+
+      - name: Run Python Script
+        run: |
+          pip install pyTelegramBotAPI
+          python -m pip install telepot

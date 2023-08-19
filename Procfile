@@ -1,1 +1,2 @@
-web: https://github.com/hanh211/ha.git main.py
+
+web: python main.py

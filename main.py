@@ -1,14 +1,18 @@
-from Detector import *
-import os
+from kivymd.app import MDApp
+from kivy.lang import Builder
 
-def main():
-    videoPath="rtsp://admin:admin1234@ngduchanh.ddns.net:554/cam/realmonitor?channel=1&subtype=0"
-    # videoPath="rtsp://admin:admin1234@192.168.1.15:554/cam/realmonitor?channel=1&subtype=0"
-    configPath=os.path.join("model_data","ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt")
-    modelPath=os.path.join("model_data","frozen_inference_graph.pb")
-    # modelPath=os.path.join("model_data","pspnet50+99.pth")
-    classesPath=os.path.join("model_data","coco.names")
-    detector=Detector(videoPath,configPath,modelPath,classesPath)
-    detector.onVideo()
-if __name__=='__main__':
-    main()
+class SampleApp(MDApp):
+    
+    def build(self):
+        self.appKv='''
+MDScreen:
+    MDLabel:
+        text:'Hello,World.'
+        multiline:True
+        halign:'center'         
+'''
+        AppScreen=Builder.load_string(self.appKv)
+        return AppScreen
+
+SampleApp().run()
+    

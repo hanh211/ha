@@ -7,13 +7,13 @@ title = SampleApp
 package.name = sampleapk
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.novfensec
+package.domain = org.test
 
 # (str) Source code where the main.py live
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,txt,atlas
+source.include_exts = py,png,jpg,kv,txt,atlas,ttf
 
 # (list) List of inclusions using pattern matching
 source.include_patterns = images/*.png
@@ -29,7 +29,7 @@ source.include_patterns = images/*.png
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.1
+version = 1.0
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.1.0,kivymd==0.104.2,pillow==8.3.1,Aidl
+requirements = python3,kivy==2.2.1,kivymd==1.1.1,pillow==10.0.0
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes

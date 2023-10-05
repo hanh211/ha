@@ -258,15 +258,15 @@ p4a.branch = release-2022.12.20
 # (str) Path to a custom kivy-ios folder
 #ios.kivy_ios_dir = ../kivy-ios
 # Alternately, specify the URL and branch of a git checkout:
-ios.kivy_ios_url = https://github.com/hanh211/ha
-ios.kivy_ios_branch = master
+#ios.kivy_ios_url = https://github.com/hanh211/ha
+#ios.kivy_ios_branch = master
 
 # Another platform dependency: ios-deploy
 # Uncomment to use a custom checkout
 #ios.ios_deploy_dir = ../ios_deploy
 # Or specify URL and branch
-ios.ios_deploy_url = https://github.com/hanh211/ha
-ios.ios_deploy_branch = 1.10.0
+#ios.ios_deploy_url = https://github.com/hanh211/ha
+#ios.ios_deploy_branch = 1.10.0
 
 # (bool) Whether or not to sign the code
 ios.codesign.allowed = false

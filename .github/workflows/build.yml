@@ -5,10 +5,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
-      # - uses: actions/checkout@v2,actions/cache@v2
       - uses: actions/checkout@v2
 
       # used to cache dependencies with a timeout
@@ -16,10 +15,6 @@ jobs:
         id: get-date
         run: |
           echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
-          sudo apt-get update
-          sudo apt-get install build-essential
-          sudo apt-get install libstdc++6
-          sudo apt-get install aidl
         shell: bash
 
       - name: Cache Buildozer global directory
@@ -38,7 +33,7 @@ jobs:
         id: buildozer
         with:
           command: buildozer android debug
-          buildozer_version: master
+          buildozer_version: stable
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2

@@ -37,7 +37,7 @@ version = 0.1
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 # requirements = python3.8,kivy,requests,urllib3,chardet,idna,ffpyplayer
-requirements = python3,kivy,requests,urllib3,chardet,idna,ffpyplayer
+requirements = python3,kivy,requests,urllib3,chardet,idna,ffpyplayer,opencv,telepot
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
@@ -83,7 +83,7 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = INTERNET,CAMERA,NFC,READ_EXTERNAL_STORAGE,RECORD_AUDIO,VIBRATE,WRITE_EXTERNAL_STORAGE
+android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18),CAMERA
 
 # (int) Target Android API, should be as high as possible.
 android.api = 28
@@ -184,16 +184,16 @@ android.minapi = 21
 #android.ouya.icon.filename = %(source.dir)s/data/ouya_icon.png
 
 # (str) XML file to include as an intent filters in <activity> tag
-android.manifest.intent_filters =
+#android.manifest.intent_filters =
 
 # (str) launchMode to set for the main activity
 #android.manifest.launch_mode = standard
 
 # (list) Android additional libraries to copy into libs/armeabi
 #android.add_libs_armeabi = libs/android/*.so
-android.add_libs_armeabi_v7a = libs/armeabi_v7a/libopencv_java4.so
-#android.add_libs_arm64_v8a = libs/armeabi_v8a/libopencv_java4.so
-#android.add_libs_x86 = libs/x86/libopencv_java4.so
+android.add_libs_armeabi_v7a = libs/android-v7/*.so
+#android.add_libs_arm64_v8a = libs/android-v8/*.so
+#android.add_libs_x86 = libs/android-x86/*.so
 #android.add_libs_mips = libs/android-mips/*.so
 
 # (bool) Indicate whether the screen should stay on
